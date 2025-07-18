@@ -1,0 +1,3 @@
+/home/aj/CLionProjects/CustomKernel/cmake-build-debug/CMakeFiles/CustomKernel.dir
+/home/aj/CLionProjects/CustomKernel/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/aj/CLionProjects/CustomKernel/cmake-build-debug/CMakeFiles/rebuild_cache.dir
