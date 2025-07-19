@@ -7,5 +7,6 @@
 
 void vga_init();
 void vga_write();
+void vga_clear();
 
 #endif //VGA_H
