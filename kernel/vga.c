@@ -5,19 +5,19 @@
 #include <stdint.h>
 #include "vga.h"
 
-
 #define VGA_ADDRESS 0xB8000
 #define VGA_WIDTH 80
 #define VGA_HEIGHT 25
+#define VGA_SIZE (VGA_WIDTH * VGA_HEIGHT)
 
 uint16_t* vga_buffer = (uint16_t*)VGA_ADDRESS;
 uint8_t vga_row = 0;
 uint8_t vga_col = 0;
-uint8_t vga_color = 0x0F;
+uint8_t vga_color = 0x0F; // White on black
 
 void vga_init()
 {
-    for (uint32_t i = 0 ; i < VGA_HEIGHT * VGA_WIDTH ; i++)
+    for (uint32_t i = 0 ; i < VGA_SIZE ; i++)
     {
         vga_buffer[i] = (uint16_t)' ' | (vga_color << 8);
     }
@@ -48,4 +48,15 @@ void vga_write(const char* str)
     {
         vga_put(*str++);
     }
+}
+
+void vga_clear()
+{
+    uint16_t blank = ((uint16_t)vga_color << 8 | ' ');
+    for (uint32_t i = 0 ; i < VGA_SIZE ; i++)
+    {
+        vga_buffer[i] = blank;
+    }
+    vga_row = 0;
+    vga_col = 0;
 }

@@ -8,4 +8,6 @@ void kernel_main(void)
 {
     vga_init();
     vga_write("Hello from my new sexy kernel!\n");
+    vga_clear();
+    vga_write("bruh mothafucka.\n");
 }
