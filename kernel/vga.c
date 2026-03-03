@@ -2,13 +2,7 @@
 // Created by aj on 7/18/25.
 //
 
-#include <stdint.h>
 #include "vga.h"
-
-#define VGA_ADDRESS 0xB8000
-#define VGA_WIDTH 80
-#define VGA_HEIGHT 25
-#define VGA_SIZE (VGA_WIDTH * VGA_HEIGHT)
 
 uint16_t* vga_buffer = (uint16_t*)VGA_ADDRESS;
 uint8_t vga_row = 0;

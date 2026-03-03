@@ -6,4 +6,4 @@ set(CMAKE_C_STANDARD 23)
 add_executable(CustomKernel
         kernel/kernel.c
         kernel/vga.c
-        kernel/vga.h)
+        kernel/keyboard.c)
