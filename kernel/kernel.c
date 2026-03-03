@@ -30,6 +30,14 @@ void kernel_main(void)
             vga_write("  -echo\n");
             vga_write("  -halt\n");
         }
+        else if (strncmp(command, "echo ", 5) == 0) {
+            vga_write(command + 5);
+            vga_put('\n');
+        }
+        else if (strcmp(command, "halt") == 0) {
+            vga_write("Halting...\n");
+            while (1) asm volatile("hlt");
+        }
         else if (command[0] != '\0') {
             vga_write("Unknown command: ");
             vga_write(command);

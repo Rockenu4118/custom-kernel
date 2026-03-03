@@ -21,7 +21,7 @@ $(KERNEL): $(SOURCES)
 	$(CC) $(CFLAGS) -c kernel/keyboard.c -o $(BUILD)/keyboard.o
 	$(CC) $(CFLAGS) -c kernel/utils.c -o $(BUILD)/utils.o
 	$(AS) -f elf32 kernel/boot.s -o $(BUILD)/boot.o
-	$(LD) $(LDFLAGS) -o $(KERNEL) $(BUILD)/boot.o $(BUILD)/kernel.o $(BUILD)/vga.o $(BUILD)/keyboard.o $(BUILD)/utils.o
+	$(LD) $(LDFLAGS) -o $(KERNEL) $(BUILD)/*.o
 
 iso: all
 	@mkdir -p $(ISO)/boot/grub
